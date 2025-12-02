@@ -102,3 +102,4 @@ pydantic-settings~=2.9.1
 python-dotenv~=1.1.0
 mypy-extensions~=1.0.0
 httpx-sse~=0.4.0
+gdown

@@ -1,22 +1,21 @@
-# ✍️ AI Blog Generator
+# AI Blog Generator
 
 A simple and intelligent Streamlit-based application powered by LLaMA 2 that generates short, structured, and audience-specific blogs using natural language prompts.
 
 ---
 
-## 🧠 Features
+## Features
 
-* 🚀 Generates short blogs instantly
-* ✍️ Audience-specific writing (Researchers, Data Scientists, Common People)
-* 🎯 Custom word count control
-* 📄 Clean, structured output (Intro, Body, Conclusion)
-* 🖼️ Beautiful UI with image header
-* ⚡ Powered by LangChain + LLaMA 2 model (running locally)
+* Generates short blogs instantly
+* Audience-specific writing (Researchers, Data Scientists, Common People)
+* Custom word count control
+* Clean, structured output
+* Powered by LangChain + LLaMA 2 model (running locally)
 
 
 ---
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ```bash
 # 1. Clone the repository
@@ -39,17 +38,13 @@ streamlit run app.py
 
 ---
 
-## 🖼 Project Structure
+## Project Structure
 
 ```
 Llama_Blog_Generator/
-│
-├── assets/
-│   └── header.png              # Header image for UI
-│
 ├── models/
 │   └── llama-2-7b-chat.ggmlv3.q8_0.bin   # LLaMA 2 model file
-│
+├── screenshots/                # Application screenshots
 ├── app.py                      # Streamlit application
 ├── requirements.txt            # All dependencies
 ├── .gitignore
@@ -60,10 +55,8 @@ Llama_Blog_Generator/
 
 ## Screenshots
 
-![Screenshot of the editor](./screenshots/s1.png)
 ![Screenshot of the editor](./screenshots/s2.png)
-![Screenshot of the editor](./screenshots/s3.png)
-
+![Screenshot of the editor](./screenshots/s1.png)
 ---
 
 ## Have Suggestions or Issues?
