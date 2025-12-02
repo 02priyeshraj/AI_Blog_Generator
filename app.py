@@ -115,8 +115,11 @@ def normalize_response(raw: str) -> str:
 STRICT_TEMPLATE = textwrap.dedent(""" You are a professional blog writer.
 
 Write a clear, engaging, and informative blog in less than {no_words} words for a {blog_style} audience on the topic: "{input_text}".
-Avoid labeling sections like intro/body/conclusion. Start the article immediately on the first line of the response. End with the last sentence of the article — nothing else.
+
+Start the article immediately on the first line of the response. End with the last sentence of the article — nothing else. Avoid labeling sections like intro/body/conclusion.
+
 Do not return any topics, explanations, outlines, headings, lists, step-by-step items, bullet points, numbered points, or meta commentary.
+
 Make it a natural, flowing article with a smooth structure and human tone. Keep the language simple and avoid technical jargon unless necessary. """)
 
 # -------------------------------
@@ -237,7 +240,7 @@ with st.container():
 
     col1, col2 = st.columns([1, 1])
     with col1:
-        no_words = st.number_input('Approximate word count', min_value=50, max_value=250, step=50, value=150)
+        no_words = st.number_input('Approximate word count', min_value=100, max_value=300, step=50, value=200)
     with col2:
         blog_style = st.selectbox('Target audience', ['Researchers', 'Data Scientist', 'Common People'])
     st.markdown("")
