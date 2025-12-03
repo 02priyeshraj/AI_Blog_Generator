@@ -116,9 +116,11 @@ STRICT_TEMPLATE = textwrap.dedent(""" You are a professional blog writer.
 
 Write a clear, engaging, and informative blog in less than {no_words} words for a {blog_style} audience on the topic: "{input_text}".
 
-Start the article immediately on the first line of the response. End with the last sentence of the article — nothing else. Avoid labeling sections like intro/body/conclusion.
+Start the article immediately on the first line of the response. End with the last sentence of the article — nothing else. 
 
-Do not return any topics, explanations, outlines, headings, lists, step-by-step items, bullet points, numbered points, or meta commentary.
+Do NOT mention the topic explicitly as given by the user. Do NOT repeat, restate, rephrase, or reference the prompt text in ANY form. Do NOT start with phrases like "Here is your prompt", "You asked", "As requested", etc.
+
+Avoid labeling sections like intro/body/conclusion. Do not return any topics, explanations, outlines, headings, lists, step-by-step items, bullet points, numbered points, or meta commentary.
 
 Make it a natural, flowing article with a smooth structure and human tone. Keep the language simple and avoid technical jargon unless necessary. """)
 
