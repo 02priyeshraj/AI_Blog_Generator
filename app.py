@@ -17,8 +17,8 @@ DRIVE_FILE_ID = "1ldSQ7-MSj5spC8qEZp9eNoKcnE4ASfJY"
 DRIVE_URL = f"https://drive.google.com/uc?id={DRIVE_FILE_ID}"
 DEFAULT_MAX_NEW_TOKENS = 256
 DEFAULT_TEMPERATURE = 0.01
-MAX_TOKENS_CAP = 2048  # safety cap for token budget
-MAX_CONTINUATIONS = 5  # number of times to auto-continue if model cuts off
+MAX_TOKENS_CAP = 1024  # safety cap for token budget
+MAX_CONTINUATIONS = 3  # number of times to auto-continue if model cuts off
 
 # -------------------------------
 # Ensure model exists (download if missing)
@@ -114,7 +114,7 @@ def normalize_response(raw: str) -> str:
 # -------------------------------
 STRICT_TEMPLATE = textwrap.dedent(""" You are a professional blog writer.
 
-Write a clear, engaging, and informative blog in less than {no_words} words for a {blog_style} audience on the topic: "{input_text}".
+Write a clear, engaging, and informative blog in around {no_words} words for a {blog_style} audience on the topic: "{input_text}".
 
 Start the article immediately on the first line of the response. End with the last sentence of the article — nothing else. 
 
@@ -242,7 +242,7 @@ with st.container():
 
     col1, col2 = st.columns([1, 1])
     with col1:
-        no_words = st.number_input('Approximate word count', min_value=100, max_value=300, step=50, value=200)
+        no_words = st.number_input('Approximate word count', min_value=50, max_value=200, step=25, value=100)
     with col2:
         blog_style = st.selectbox('Target audience', ['Researchers', 'Data Scientist', 'Common People'])
     st.markdown("")
